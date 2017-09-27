@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Congress 113 - House</title>
+
+  <link rel="icon" href="styles/casita.ico" type="image/x-icon">
+
+  <!-- Bootstrap -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Own Style -->
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+
+  <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+
+   <link rel="stylesheet" type="text/css" href="styles/colorbox.css">
+
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Loved+by+the+King" rel="stylesheet">
+
+</head>
+
+<body onload="myFunction()" style="margin:0;">
+
+  <div id="loading">
+
+    <div class="ballscontainer">
+
+      <div class="cord leftMove">
+        <div class="ball"></div>
+      </div>
+      <div class="cord">
+        <div class="ball"></div>
+      </div>
+      <div class="cord">
+        <div class="ball"></div>
+      </div>
+      <div class="cord">
+        <div class="ball"></div>
+      </div>
+      <div class="cord">
+        <div class="ball"></div>
+      </div>
+      <div class="cord">
+        <div class="ball"></div>
+      </div>
+      <div class="cord rightMove">
+        <div class="ball" id="first"></div>
+      </div>
+
+
+      <div class="shadows">
+        <div class="leftShadow"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="rightShadow"></div>
+      </div>
+
+      <br><br>
+
+      <div id="loadp" class="ballscontainer">
+
+        <p>Loading...</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="container">
+
+    <div class="inside">
+
+      <header>
+
+        <div id="logo">
+
+          <div class="insideLogo">
+            <img class="casita" src="styles/casita.png" alt="Logo">
+          </div>
+
+          <div class="insideLogo">
+            <h6>TGIF</h6>
+          </div>
+
+        </div>
+
+        <div id="contact">
+          <a href="mailto:info@tgif.net"><span class="glyphicon glyphicon-envelope"></span> info@tgif.net</a>
+        </div>
+
+      </header>
+
+
+      <nav class="navbar navbar-default">
+
+        <div class="container-fluid">
+
+          <ul class="nav navbar-nav">
+
+            <li class="active">
+
+              <a href="index.html">⌂ Home</a>
+
+            </li>
+
+            <li class="dropdown">
+
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Congress 113<span class="caret"></span></a>
+
+              <ul class="dropdown-menu">
+
+                <li>
+
+                  <a href="house-starter-page.html">House</a>
+
+                </li>
+
+                <li>
+
+                  <a href="senate-starter-page.html">Senate</a>
+
+                </li>
+
+              </ul>
+
+            </li>
+
+            <li class="dropdown">
+
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Attendance<span class="caret"></span></a>
+
+              <ul class="dropdown-menu">
+
+                <li>
+
+                  <a href="house-attendance-starter-page.html">House</a>
+
+                </li>
+
+                <li>
+
+                  <a href="senate-attendance-starter-page.html">Senate</a>
+
+                </li>
+
+              </ul>
+
+            </li>
+
+            <li class="dropdown">
+
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Party Loyalty<span class="caret"></span></a>
+
+              <ul class="dropdown-menu">
+
+                <li>
+
+                  <a href="house-party-loyalty-starter-page.html">House</a>
+
+                </li>
+
+                <li>
+
+                  <a href="senate-party-loyalty-starter-page.html">Senate</a>
+
+                </li>
+
+              </ul>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+  <div class="container">
+
+    <section>
+
+      <div class="row">
+
+        <div class="col-sm-7">
+
+          <h2>Congressmen</h2>
+
+          <p>The major power of the House is to pass federal legislation that affects the entire country, although its bills must also be passed by the Senate and further agreed to by the U.S. President before becoming law (unless both the House and Senate re-pass the legislation with a two-thirds majority in each chamber). The House has some exclusive powers: the power to initiate revenue bills, to impeach officials (impeached officials are subsequently tried in the Senate), and to elect the U.S. President in case there is no majority in the Electoral College.</p>
+
+          <p>Each U.S. state is represented in the House in proportion to its population as measured in the census, but every state is entitled to at least one representative. </p>
+
+        </div>
+
+        <div class="col-sm-5"></div>
+
+      </div>
+
+      <div class="filters">
+
+        <div id="checkboxes">
+
+          <p class="filerstable">Filter by Party:</p>
+
+          <div class="boxes">
+
+            <div class="check">
+              <input id="Rep" type="checkbox" name="Republican" />Republican
+            </div>
+
+            <div class="check">
+              <input id="Dem" type="checkbox" name="Democratic" />Democratic
+            </div>
+
+            <div class="check">
+              <input id="Ind" type="checkbox" name="Independent" />Independent
+            </div>
+
+          </div>
+
+        </div>
+
+        <div id="dropdownmenu">
+
+          <p class="filerstable">Filter by State:</p>
+
+          <form name="downfilter" id="FilterForm" action="" method="">
+
+            <select id="state-filter" class="filter">
+
+            <option id="option" value="All">-- All --</option>-->
+
+<!--            <option id="option" value=""></option>-->
+
+                    </select>
+
+          </form>
+
+        </div>
+
+      </div>
+
+      <!--Table container-->
+      <table id="table-data" class="tablesorter"></table>
+
+    </section>
+
+    <footer>
+
+      <p class="footer">©2016 TGIF | All Rights Reserved</p>
+
+    </footer>
+
+  </div>
+
+  <!--  <script src="js/data-house.js"></script>-->
+
+  <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+  <script src="js/jquery.colorbox.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+
+</html>

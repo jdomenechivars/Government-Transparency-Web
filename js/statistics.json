@@ -1,0 +1,27 @@
+{
+  "glance": [{
+      "party": "Democrats",
+      "Nº of Reps": "0",
+      "% Voted w/ Party": "0",
+},
+    {
+      "party": "Republicans",
+      "Nº of Reps": "0",
+      "% Voted w/ Party": "0",
+},
+    {
+      "party": "Democrats",
+      "Nº of Reps": "0",
+      "% Voted w/ Party": "0",
+}],
+  "least Engaged": [{
+    "Name": "0",
+    "Nº Missed Votes": "0",
+    "% Missed": "0",
+}],
+  "Most Engaged": [{
+    "Name": "0",
+    "Nº Missed Votes": "0",
+    "% Missed": "0",
+}],
+};

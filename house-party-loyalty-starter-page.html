@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>House Party Loyalty</title>
+
+  <link rel="icon" href="styles/casita.ico" type="image/x-icon">
+
+  <!-- Bootstrap -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Own Style -->
+
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+
+  <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Loved+by+the+King" rel="stylesheet">
+
+</head>
+
+<body onload="myFunction()" style="margin:0;">
+
+  <div id="loading">
+
+  <div class="ballscontainer">
+
+  <div class="cord leftMove">
+    <div class="ball"></div>
+  </div>
+  <div class="cord">
+    <div class="ball"></div>
+  </div>
+  <div class="cord">
+    <div class="ball"></div>
+  </div>
+  <div class="cord">
+    <div class="ball"></div>
+  </div>
+  <div class="cord">
+    <div class="ball"></div>
+  </div>
+  <div class="cord">
+    <div class="ball"></div>
+  </div>
+  <div class="cord rightMove">
+    <div class="ball" id="first"></div>
+  </div>
+
+
+  <div class="shadows">
+    <div class="leftShadow"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="rightShadow"></div>
+  </div>
+
+     <br><br>
+    <div id="loadp" class="ballscontainer"><p>Loading...</p></div>
+
+
+</div>
+  </div>
+
+  <div class="container">
+
+    <div class="inside">
+
+      <header>
+
+        <div id="logo">
+
+          <div class="insideLogo">
+            <img class="casita" src="styles/casita.png" alt="Logo">
+          </div>
+
+          <div class="insideLogo">
+            <h6>TGIF</h6>
+          </div>
+
+        </div>
+
+        <div id="contact">
+          <a href="mailto:info@tgif.net"><span class="glyphicon glyphicon-envelope"></span> info@tgif.net</a>
+        </div>
+
+      </header>
+
+
+      <nav class="navbar navbar-default">
+
+        <div class="container-fluid">
+
+          <ul class="nav navbar-nav">
+
+            <li class="active">
+
+              <a href="index.html">⌂ Home</a>
+
+            </li>
+
+            <li class="dropdown">
+
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Congress 113<span class="caret"></span></a>
+
+              <ul class="dropdown-menu">
+
+                <li>
+
+                  <a href="house-starter-page.html">House</a>
+
+                </li>
+
+                <li>
+
+                  <a href="senate-starter-page.html">Senate</a>
+
+                </li>
+
+              </ul>
+
+            </li>
+
+            <li class="dropdown">
+
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Attendance<span class="caret"></span></a>
+
+              <ul class="dropdown-menu">
+
+                <li>
+
+                  <a href="house-attendance-starter-page.html">House</a>
+
+                </li>
+
+                <li>
+
+                  <a href="senate-attendance-starter-page.html">Senate</a>
+
+                </li>
+
+              </ul>
+
+            </li>
+
+            <li class="dropdown">
+
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Party Loyalty<span class="caret"></span></a>
+
+              <ul class="dropdown-menu">
+
+                <li>
+
+                  <a href="house-party-loyalty-starter-page.html">House</a>
+
+                </li>
+
+                <li>
+
+                  <a href="senate-party-loyalty-starter-page.html">Senate</a>
+
+                </li>
+
+              </ul>
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </div>
+
+  <div class="container">
+
+      <!--Table container-->
+    <section>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+
+          <h2>Party Loyalty</h2>
+
+          <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>
+
+        </div>
+
+        <div class="col-sm-6">
+
+          <h2>House at a glance</h2>
+
+          <table id="glanceTable"></table>
+
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+
+          <h2>Least Loyal
+            <h5>(Bottom 10% of Party)</h5>
+          </h2>
+
+          <table id="leastTable"></table>
+
+        </div>
+
+
+          <div class="col-sm-6">
+
+            <h2>Most Loyal
+              <h5>(Top 10% of Party)</h5>
+            </h2>
+
+            <table id="mostTable"></table>
+
+          </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+      <p class="footer">©2016 TGIF | All Rights Reserved</p>
+
+    </footer>
+
+  </div>
+
+<!--  <script src="js/data-house.js"></script>-->
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+  <script src="js/statistics.js"></script>
+  <script src="js/display-statistics.js"></script>
+
+</body>
+
+</html>

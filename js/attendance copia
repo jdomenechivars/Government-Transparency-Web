@@ -1,0 +1,213 @@
+
+fillGlanceTable();
+
+function fillGlanceTable() {
+
+  var table = document.getElementById("glanceTable");
+
+  table.innerHTML = "";
+
+  tableHeads(table);
+  tableRows(table);
+  tableTotal(table);
+
+}
+
+function tableHeads(table) {
+
+  var heads = Object.keys(statistics.glance[0]);
+
+  for (var c = 0; c < heads.length; c++) {
+
+    var RowH = document.createElement("th");
+
+    RowH.innerHTML = heads[c];
+    table.appendChild(RowH);
+  }
+
+}
+
+function tableRows(table) {
+
+  var party = statistics.glance;
+
+  for (var i = 0; i < party.length; i++) {
+
+    var partido = party[i];
+
+    var row = document.createElement("tr");
+
+    createCells(row, partido);
+    table.appendChild(row);
+  }
+
+}
+
+function createCells(row, partido) {
+
+  numberOfRep(partido);
+
+  var content = Object.values(partido);
+
+  for (j = 0; j < content.length; j++) {
+
+    var cell = document.createElement("td")
+
+    cell.innerHTML = content[j];
+    row.appendChild(cell);
+  }
+
+}
+
+function numberOfRep(partido) {
+
+  var democrats = [];
+  
+  var republicans = [];
+
+  var independents = [];
+
+  var member = data.results[0].members;
+
+  for (var i = 0; i < member.length; i++) {
+
+    var miembro = member[i];
+
+    if (miembro.party == "D") {
+
+      democrats.push(miembro);
+
+    } else if (miembro.party == "R") {
+
+      republicans.push(miembro);
+
+    } else {
+
+      independents.push(miembro);
+    }
+  }
+
+  var totalDemocrats = democrats.length;
+  
+  var totalRepublicans = republicans.length;
+  
+  var totalIndependents = independents.length;
+
+  var percDem = getPercentatge(democrats);
+  
+  var percRep = getPercentatge(republicans);
+  
+  var percInd  = getPercentatge(independents);
+  
+  statistics.glance[0]["% Voted with Party"] = percDem + "%";
+  statistics.glance[1]["% Voted with Party"] = percRep + "%";
+  statistics.glance[2]["% Voted with Party"]= percInd + "%";
+  
+}
+
+function getPercentatge(membersByParty) {
+  
+  var totalVotes = 0;
+  for(var i=0; i < membersByParty.length; i++) {
+    
+    var eachMember = membersByParty[i];
+    totalVotes = totalVotes + parseFloat(eachMember.votes_with_party_pct);
+  }
+  
+  var percentatge = Math.round(totalVotes / membersByParty.length);
+  
+  return percentatge;
+  
+}
+
+//function sumOfVotes(partido, democrats, republicans, independents, totalDemocrats, totalRepublicans, totalIndependents) {
+//
+//  var sumdem = 0;
+//  var sumrep = 0;
+//  var sumind = 0;
+//
+//  for (r = 0; r < democrats.length; r++) {
+//
+//    var eachDemo = democrats[r];
+//
+//    sumdem = sumdem + parseFloat(eachDemo.votes_with_party_pct);
+//
+//  }
+//
+//  var totalVotesDem = Math.round(sumdem / democrats.length);
+//
+//  for (g = 0; g < republicans.length; g++) {
+//
+//    var eachRepu = republicans[g];
+//
+//    sumrep = sumrep + parseFloat(eachRepu.votes_with_party_pct);
+//
+//  }
+//
+//  var totalVotesRep = Math.round((sumrep / republicans.length));
+//
+//  for (d = 0; d < independents.length; d++) {
+//
+//    var eachInde = independents[d];
+//
+//    sumind = sumind + parseFloat(eachInde.votes_with_party_pct);
+//
+//  }
+//
+//  var totalVotesInd = Math.round((sumind / independents.length));
+//
+//  changeValues(partido, totalDemocrats, totalIndependents, totalRepublicans, totalVotesDem, totalVotesRep, totalVotesInd);
+//
+//}
+//
+//function changeValues(partido, totalDemocrats, totalIndependents, totalRepublicans, totalVotesDem, totalVotesRep, totalVotesInd) {
+//
+//  if (partido.Party == "Democrats") {
+//
+//    partido["Number of Reps"] = totalDemocrats;
+//    partido["% Voted with Party"] = totalVotesDem + "%";
+//
+//
+//  } else if (partido.Party == "Republicans") {
+//
+//    partido["Number of Reps"] = totalRepublicans;
+//    partido["% Voted with Party"] = totalVotesRep + "%";
+//
+//  } else {
+//
+//    partido["Number of Reps"] = totalIndependents;
+//    partido["% Voted with Party"] = totalVotesInd + "%";
+//
+//  }
+//  
+//  var totalParty = totalDemocrats + totalRepublicans + totalIndependents;
+//
+////  allTotals.push(totalParty);
+//
+//  var totalVotedPer = totalVotesDem + totalVotesRep + totalVotesInd;
+//
+////  allTotals.push(totalVotedPer);
+//  
+//}
+
+function tableTotal(table) {
+
+  var rowTotal = document.createElement("tfoot");
+
+  var cellTot = document.createElement("td");
+
+  cellTot.innerHTML = "Total";
+  rowTotal.appendChild(cellTot);
+
+  var totals = Object.keys(statistics.glance[0]);
+
+  for (var c = 0; c < totals.length - 1; c++) {
+
+    var totalCell = document.createElement("td")
+
+    totalCell.innerHTML = "a";
+    rowTotal.appendChild(totalCell);
+    table.appendChild(rowTotal);
+  }
+
+}
